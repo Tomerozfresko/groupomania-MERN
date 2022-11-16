@@ -1,3 +1,4 @@
+import React from "react";
 import "./share.scss";
 import Image from "../../assets/img.png";
 import { useContext } from "react";

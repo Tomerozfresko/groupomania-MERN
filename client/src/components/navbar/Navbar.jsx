@@ -1,5 +1,6 @@
+import React from "react";
 import "./navbar.scss";
-import LogoutIcon from '@mui/icons-material/Logout';
+import LogoutIcon from "@mui/icons-material/Logout";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
@@ -18,8 +19,12 @@ const Navbar = () => {
     })
   );
 
-  if (error) { return "Something went wrong" };
-  if (isLoading) { return "Loading..." }
+  if (error) {
+    return "Something went wrong";
+  }
+  if (isLoading) {
+    return "Loading...";
+  }
 
   return (
     <div className="navbar">
@@ -31,7 +36,11 @@ const Navbar = () => {
       <div className="right">
         <div className="user" onClick={() => setOpenUpdate(true)}>
           <img
-            src={data.profilepicture.slice(0, 4) === "http" ? data.profilepicture : "/upload/" + data.profilepicture}
+            src={
+              data.profilepicture.slice(0, 4) === "http"
+                ? data.profilepicture
+                : "/upload/" + data.profilepicture
+            }
             alt=""
           />
           <span>{currentUser.name}</span>
